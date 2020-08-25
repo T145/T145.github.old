@@ -4,10 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import styled, { keyframes } from 'styled-components';
+import Pulse from '@bit/formidablelabs.react-animations.pulse';
+
+const PulseAnim = keyframes`${Pulse}`;
+const PulseDiv = styled.div`
+  animation: infinite 5s ${PulseAnim};
+`;
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <PulseDiv>
+    <img src="https://picsum.photos/1920/1080/?random" />
+  </PulseDiv>,
   document.getElementById('root')
 );
 
