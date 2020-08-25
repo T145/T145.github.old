@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import styled, { keyframes } from 'styled-components';
@@ -14,7 +13,7 @@ const PulseDiv = styled.div`
 
 ReactDOM.render(
   <PulseDiv>
-    <img src="https://picsum.photos/1920/1080/?random" />
+    <img src="https://picsum.photos/1260/750/?random" />
   </PulseDiv>,
   document.getElementById('root')
 );
