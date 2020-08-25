@@ -5,9 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import styled, { keyframes } from 'styled-components';
-import Pulse from '@bit/formidablelabs.react-animations.pulse';
+import { pulse } from 'react-animations';
 
-const PulseAnim = keyframes`${Pulse}`;
+const PulseAnim = keyframes`${pulse}`;
 const PulseDiv = styled.div`
   animation: infinite 5s ${PulseAnim};
 `;
