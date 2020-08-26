@@ -1,20 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import styled, { keyframes } from 'styled-components';
-import { pulse } from 'react-animations';
-
-const PulseAnim = keyframes`${pulse}`;
-const PulseDiv = styled.div`
-  animation: infinite 5s ${PulseAnim};
-`;
-
 ReactDOM.render(
-  <PulseDiv>
-    <img src="https://picsum.photos/1260/750/?random" />
-  </PulseDiv>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
