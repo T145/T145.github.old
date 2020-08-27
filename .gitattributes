@@ -8,8 +8,9 @@
 *.info text
 *.txt text
 *.json text
-## Project-specific
+## Web project
 *.html text
+*.css text
 *.ts text
 *.tsx text
 *.scss text
@@ -60,3 +61,7 @@
 *.bat eol=crlf
 *.cmd eol=crlf
 *.ps1 eol=crlf
+
+# Undo GitHub's default
+# https://github.com/github/linguist/blob/96ad1185828f44bb9b774328a584551ee57ed264/lib/linguist/vendor.yml#L177
+*.d.ts -linguist-vendored
