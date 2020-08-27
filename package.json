@@ -1,25 +1,15 @@
 {
   "name": "t145.github.io",
   "version": "1.0.0",
-  "homepage": "http://T145.github.io/",
   "private": true,
-  "dependencies": {
-    "@types/jest": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "latest",
-    "typescript": "latest"
-  },
+  "homepage": "http://T145.github.io/",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -33,11 +23,25 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-is": "latest",
+    "react-scripts": "latest",
+    "styled-components": "latest",
+    "typescript": "latest"
+  },
   "devDependencies": {
     "@testing-library/dom": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
+    "@types/styled-components": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "latest",
@@ -49,6 +53,7 @@
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "latest",
     "gh-pages": "latest",
-    "prettier": "latest"
+    "prettier": "latest",
+    "sort-package-json": "latest"
   }
 }
