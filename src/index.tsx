@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
+import App from './App';
+import Theme from './Theme';
+import 'fontsource-roboto';
+
+//ReactDOM.render(<React.StrictMode><App/></React.StrictMode>,document.getElementById('root'));
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ThemeProvider theme={Theme}>
+    <CssBaseline />
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </ThemeProvider>,
+  document.querySelector('#root'),
 );
 
 // If you want your app to work offline and load faster, you can change
