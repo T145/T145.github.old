@@ -26,6 +26,9 @@ _MACOSX
 *.tar
 *.zip
 
+# lock file
+package-lock.json
+
 # dependencies
 /node_modules
 /.pnp

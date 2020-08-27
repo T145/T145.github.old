@@ -1,17 +1,20 @@
 {
   "name": "t145.github.io",
   "version": "1.0.0",
-  "private": true,
   "homepage": "http://T145.github.io/",
+  "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-animations": "^1.0.0",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "styled-components": "^5.1.1"
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest",
+    "typescript": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +40,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "latest"
   }
 }
