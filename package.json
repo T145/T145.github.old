@@ -28,6 +28,10 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
+    "@testing-library/dom": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
@@ -42,10 +46,6 @@
     "typescript": "latest"
   },
   "devDependencies": {
-    "@testing-library/dom": "latest",
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
     "@types/styled-components": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
