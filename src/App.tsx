@@ -8,7 +8,7 @@ import {
   Link,
 } from '@material-ui/core';
 import AppStyle from './styles/AppStyle';
-import ProTip from './ProTip';
+import ProTip from './components/ProTip';
 
 function Copyright() {
   return (

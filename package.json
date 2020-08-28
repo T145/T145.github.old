@@ -28,6 +28,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
+    "@material-ui/styles": "latest",
     "@testing-library/dom": "latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
@@ -38,6 +39,7 @@
     "@types/react-dom": "latest",
     "fontsource-roboto": "latest",
     "node-sass": "latest",
+    "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-is": "latest",
@@ -46,6 +48,7 @@
     "typescript": "latest"
   },
   "devDependencies": {
+    "@tsconfig/react-native": "latest",
     "@types/styled-components": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
