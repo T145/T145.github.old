@@ -38,6 +38,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-router-dom": "latest",
+    "clsx": "latest",
     "fontsource-roboto": "latest",
     "history": "latest",
     "node-sass": "latest",
