@@ -1,17 +1,17 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "display": "React",
-
   "compilerOptions": {
     "jsx": "react",
-
-    // --- Settings required by Material UI ---
-    // (DOM.Iterable required by React)
     "lib": ["DOM", "DOM.Iterable"],
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"],
-  "exclude": ["prettier.config.js"]
+  "exclude": ["public", "prettier.config.js"]
 }
