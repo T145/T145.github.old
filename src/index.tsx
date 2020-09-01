@@ -1,7 +1,6 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Navigator from './components/Navigator';
+import Website from './components/Website';
 import 'fontsource-roboto';
 
 /*
@@ -12,9 +11,7 @@ import 'fontsource-roboto';
 
 ReactDOM.render(
   <StrictMode>
-    <Router>
-      <Navigator />
-    </Router>
+    <Website />
   </StrictMode>,
   document.querySelector('#root')
 );
