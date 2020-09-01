@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid, Paper } from '@material-ui/core';
-import AppStyles from '../AppStyles';
-import Title from '../Title';
+import { Grid, Paper, Typography } from '@material-ui/core';
+import AppStyles from '../constants/AppStyles';
 
 export default function HomePage() {
   const classes = AppStyles();
@@ -9,7 +8,9 @@ export default function HomePage() {
   return (
     <Grid item xs={12}>
       <Paper className={classes.paper}>
-        <Title>Hello World!</Title>
+        <Typography component="h2" variant="h6" color="primary" gutterBottom>
+          Archive Page
+        </Typography>
         <p>
           This is a website for all README information related to T145&rsquo;s
           Github Repositories!

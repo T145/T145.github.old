@@ -1,41 +1,37 @@
 import React from 'react';
 import clsx from 'clsx';
+import { isMobileOnly } from 'react-device-detect';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import {
-  Grid,
   CssBaseline,
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
+  Typography,
   Drawer,
   Divider,
   List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Container,
+  Grid,
   Box,
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { Link } from 'react-router-dom';
-import AppStyles from './AppStyles';
-import Routes from './utils/Routes';
-import Switchboard from './Switchboard';
+
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import ChevronLeftRoundedIcon from '@material-ui/icons/ChevronLeftRounded';
+
+import AppStyles from '../constants/AppStyles';
+import ListItemLink from './ListItemLink';
 import Copyright from './Copyright';
+import Routes from '../utils/Routes';
 
 export default function Navigator() {
   const classes = AppStyles();
-  const [open, setOpen] = React.useState(true);
-  const [name, setName] = React.useState('Home');
+  const [open, setOpen] = React.useState(!isMobileOnly);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-  const updateName = (str: string) => {
-    setName(str);
   };
 
   return (
@@ -57,17 +53,22 @@ export default function Navigator() {
               open && classes.menuButtonHidden
             )}
           >
-            <MenuIcon />
+            <MenuRoundedIcon />
           </IconButton>
-          <Typography
-            component="h1"
-            variant="h6"
-            color="inherit"
-            noWrap
-            className={classes.title}
-          >
-            {name}
-          </Typography>
+
+          <Route>
+            {({ location }) => (
+              <Typography
+                component="h1"
+                variant="h6"
+                color="inherit"
+                noWrap
+                className={classes.title}
+              >
+                {location.pathname}
+              </Typography>
+            )}
+          </Route>
         </Toolbar>
       </AppBar>
 
@@ -80,35 +81,47 @@ export default function Navigator() {
       >
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
+            <ChevronLeftRoundedIcon />
           </IconButton>
         </div>
 
         <Divider />
         <List>
-          {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            Routes.map((prop, key) => {
-              return (
-                <ListItem button onClick={() => updateName(prop.name)}>
-                  <ListItemIcon>
-                    <prop.icon />
-                  </ListItemIcon>
-                  <ListItemText primary={prop.name} />
-                  <Link to={prop.path} />
-                </ListItem>
-              );
-            })
-          }
+          {Routes.map(route => {
+            return (
+              <ListItemLink
+                to={route.path}
+                primary={route.name}
+                icon={route.icon}
+                key={route.key}
+              />
+            );
+          })}
         </List>
       </Drawer>
 
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
+
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Switchboard />
+            <Switch>
+              {
+                // render page content on the corresponding route
+                Routes.map(route => {
+                  return (
+                    <Route
+                      path={route.path}
+                      key={route.key}
+                      component={route.component}
+                    />
+                  );
+                })
+              }
+              <Redirect from="/" to="home" />
+            </Switch>
           </Grid>
+
           <Box pt={4}>
             <Copyright />
           </Box>

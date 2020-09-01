@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "homepage": "http://T145.github.io/",
+  "author": {
+    "name": "T145",
+    "url": "https://github.com/T145"
+  },
   "scripts": {
     "build": "react-scripts build",
+    "clean": "yarn cache clean",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
@@ -42,10 +47,11 @@
     "fontsource-roboto": "latest",
     "history": "latest",
     "node-sass": "latest",
-    "prop-types": "latest",
     "react": "latest",
+    "react-device-detect": "^1.13.1",
     "react-dom": "latest",
     "react-is": "latest",
+    "react-player": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
     "styled-components": "latest",
