@@ -5,7 +5,7 @@
   "homepage": "http://T145.github.io/",
   "scripts": {
     "build": "react-scripts build",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",

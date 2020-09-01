@@ -2,7 +2,6 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navigator from './components/Navigator';
-import * as worker from './serviceWorker';
 import 'fontsource-roboto';
 
 /*
@@ -19,9 +18,3 @@ ReactDOM.render(
   </StrictMode>,
   document.querySelector('#root')
 );
-
-if (process.env.NODE_ENV === 'production') {
-  worker.register();
-} else {
-  worker.unregister();
-}
