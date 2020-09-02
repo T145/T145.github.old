@@ -2,12 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { isMobileOnly } from 'react-device-detect';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
   CssBaseline,
@@ -125,6 +120,7 @@ export default function Navigator() {
                     Routes.map(route => {
                       return (
                         <Route
+                          exact
                           path={route.path}
                           key={route.key}
                           component={route.component}
@@ -132,7 +128,6 @@ export default function Navigator() {
                       );
                     })
                   }
-                  <Redirect from="/" to="home" />
                 </Switch>
               </Grid>
 

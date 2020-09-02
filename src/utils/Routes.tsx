@@ -9,7 +9,7 @@ import ArchivePage from '../pages/ArchivePage';
 const Routes = [
   {
     key: 100,
-    path: '/home',
+    path: '/',
     name: 'Home',
     icon: <HomeRoundedIcon />,
     component: HomePage,
