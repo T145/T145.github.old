@@ -2,11 +2,11 @@
   "name": "t145.github.io",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://T145.github.io/",
+  "homepage": "https://T145.github.io",
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
     "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
