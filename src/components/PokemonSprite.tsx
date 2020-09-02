@@ -1,4 +1,6 @@
 import React from 'react';
+import { Avatar } from '@material-ui/core';
+import Styles from '../constants/AppStyles';
 
 /**
  * Generates a random integer between min and max (inclusive)
@@ -11,6 +13,7 @@ function randomInt(min: number, max: number) {
 }
 
 export default function PokemonSprite() {
+  const classes = Styles();
   // const [hasError, setError] = React.useState(false);
   const [sprite, setSprite] = React.useState('');
   const [name, setName] = React.useState('');
@@ -31,13 +34,7 @@ export default function PokemonSprite() {
     fetchData();
   }, []);
 
-  if (sprite) {
-    return (
-      <div>
-        <img src={sprite} alt={name} />
-      </div>
-    );
-  }
-
-  return <></>;
+  return (
+    <Avatar src={sprite || ''} alt={name} className={classes.largeAvatar} />
+  );
 }
