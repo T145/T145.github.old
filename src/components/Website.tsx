@@ -25,9 +25,9 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import ChevronLeftRoundedIcon from '@material-ui/icons/ChevronLeftRounded';
 
 import AppStyles from '../constants/AppStyles';
-import ListItemLink from './ListItemLink';
-import Copyright from './Copyright';
 import Routes from '../utils/Routes';
+import ListItemLink from './ListItemLink';
+import Footer from './Footer';
 
 export default function Navigator() {
   const classes = AppStyles();
@@ -129,7 +129,7 @@ export default function Navigator() {
             </Grid>
 
             <Box pt={4}>
-              <Copyright />
+              <Footer />
             </Box>
           </Container>
         </main>
