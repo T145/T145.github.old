@@ -2,6 +2,12 @@ import React from 'react';
 import { Avatar } from '@material-ui/core';
 import Styles from '../constants/AppStyles';
 
+/*
+ * TODO:
+ * Add Snackbar for fetch errors
+ * Add badges with randomized items
+ */
+
 /**
  * Generates a random integer between min and max (inclusive)
  * @param  {number} min

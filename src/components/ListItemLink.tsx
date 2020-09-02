@@ -7,6 +7,11 @@ import {
   LinkProps as RouterLinkProps,
 } from 'react-router-dom';
 
+/*
+ * TODO:
+ * Figure out how to fix eslint issues
+ */
+
 interface ListItemLinkProps {
   icon?: React.ReactNode;
   primary: string;
