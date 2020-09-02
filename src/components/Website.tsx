@@ -1,12 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
 import { isMobileOnly } from 'react-device-detect';
+
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
 } from 'react-router-dom';
+
 import {
   CssBaseline,
   AppBar,

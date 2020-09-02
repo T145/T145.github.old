@@ -48,7 +48,6 @@
     "react-player": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "styled-components": "latest",
     "typescript": "latest"
   },
   "devDependencies": {
