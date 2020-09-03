@@ -6,7 +6,7 @@ describe('<ListLink />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<ListLink />);
+    component = shallow(<ListLink primary="Home" to="/" />);
   });
 
   test('It should mount', () => {

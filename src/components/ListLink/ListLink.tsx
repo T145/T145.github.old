@@ -3,20 +3,20 @@ import { Link, LinkProps } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import Empty from '../EmptyNode/EmptyNode';
 
-interface LLDefaultProps {
-  icon?: ReactNode;
-}
-
-interface LLProps {
+interface RequiredProps {
   primary: string;
   to: string;
 }
 
-const defaultProps: LLDefaultProps = {
+interface OptionalProps {
+  icon?: ReactNode;
+}
+
+const defaultProps: OptionalProps = {
   icon: <Empty />,
 };
 
-const ListLink = ({ icon, primary, to }: LLDefaultProps & LLProps) => {
+const ListLink = ({ icon, primary, to }: OptionalProps & RequiredProps) => {
   const renderLink = useMemo(
     () =>
       forwardRef<never, Omit<LinkProps, 'to'>>((itemProps, ref) => (
