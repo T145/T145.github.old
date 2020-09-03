@@ -11,7 +11,7 @@
       "path": "src/components",
       "withStyle": true,
       "withTest": true,
-      "withStory": true,
+      "withStory": false,
       "withLazy": false
     },
     "page": {
@@ -32,6 +32,16 @@
       "withStyle": true,
       "withTest": true,
       "withStory": true,
+      "withLazy": false
+    },
+    "constant": {
+      "customTemplates": {
+        "component": "templates/constant/constant.ts"
+      },
+      "path": "src/constants",
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
       "withLazy": false
     }
   }
