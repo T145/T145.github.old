@@ -23,6 +23,7 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
+    "react/jsx-props-no-spreading": "off", // props spreading is on track to become a standard: https://zhenyong.github.io/react/docs/transferring-props.html#transferring-with-...-in-jsx
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",

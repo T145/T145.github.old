@@ -12,6 +12,6 @@
     "module": "esnext",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
+  "include": ["src", "templates"],
   "exclude": ["public", "prettier.config.js"]
 }
