@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Routes from '../../routes';
 import DesktopStyle from '../../constants/DesktopStyle/DesktopStyle';
 import DesktopNavigator from '../../components/DesktopNavigator/DesktopNavigator';
+import Footer from '../../components/Footer/Footer';
 
 export default function DesktopLayout() {
   const classes = DesktopStyle();
@@ -25,6 +26,8 @@ export default function DesktopLayout() {
               />
             ))}
           </Switch>
+
+          <Footer />
         </main>
       </div>
     </Router>
