@@ -9,7 +9,7 @@
         "component": "templates/component/component.tsx"
       },
       "path": "src/components",
-      "withStyle": true,
+      "withStyle": false,
       "withTest": true,
       "withStory": false,
       "withLazy": false
@@ -19,7 +19,7 @@
         "component": "templates/component/component.tsx"
       },
       "path": "src/pages",
-      "withStyle": true,
+      "withStyle": false,
       "withTest": true,
       "withStory": true,
       "withLazy": false
@@ -29,7 +29,7 @@
         "component": "templates/component/component.tsx"
       },
       "path": "src/layouts",
-      "withStyle": true,
+      "withStyle": false,
       "withTest": true,
       "withStory": true,
       "withLazy": false

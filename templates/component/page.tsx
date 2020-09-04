@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-export default function ArchivePage() {
+export default function TemplateName() {
   return (
-    <div data-testid="ArchivePage">
+    <div data-testid="TemplateName">
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        Archive Page
+        TemplateName
       </Typography>
 
       <Typography paragraph>
