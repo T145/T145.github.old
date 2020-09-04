@@ -14,9 +14,7 @@ export default function Footer() {
     >
       <Pokemon />
       <Pokemon />
-      <Pokemon />
       <Copyright />
-      <Pokemon />
       <Pokemon />
       <Pokemon />
     </Grid>
