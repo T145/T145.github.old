@@ -6,7 +6,7 @@
   "component": {
     "default": {
       "customTemplates": {
-        "component": "templates/component/component.tsx"
+        "component": "templates/component.tsx"
       },
       "path": "src/components",
       "withStyle": false,
@@ -16,7 +16,7 @@
     },
     "page": {
       "customTemplates": {
-        "component": "templates/component/component.tsx"
+        "component": "templates/page.tsx"
       },
       "path": "src/pages",
       "withStyle": false,
@@ -26,7 +26,7 @@
     },
     "layout": {
       "customTemplates": {
-        "component": "templates/component/component.tsx"
+        "component": "templates/component.tsx"
       },
       "path": "src/layouts",
       "withStyle": false,
@@ -36,7 +36,7 @@
     },
     "constant": {
       "customTemplates": {
-        "component": "templates/constant/constant.ts"
+        "component": "templates/constant.ts"
       },
       "path": "src/constants",
       "withStyle": false,
