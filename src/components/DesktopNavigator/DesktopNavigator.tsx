@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import {
   Drawer,
   AppBar,
@@ -16,38 +15,11 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import PaletteIcon from '@material-ui/icons/PaletteRounded';
 
 import Routes from '../../routes';
+import DesktopStyle from '../../constants/DesktopStyle/DesktopStyle';
 import ListLink from '../ListLink/ListLink';
 
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-      margin: theme.spacing(0, 3, 0),
-    },
-    appBar: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-  })
-);
-
 function DesktopNavigator() {
-  const classes = useStyles();
+  const classes = DesktopStyle();
 
   return (
     <div data-testid="DesktopNavigator">
