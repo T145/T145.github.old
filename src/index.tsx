@@ -2,7 +2,6 @@ import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { isMobile, isTablet } from 'react-device-detect';
 import { ThemeProvider } from '@material-ui/core';
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'fontsource-roboto'; // required for Material UI
 import TabletLayout from './layouts/TabletLayout/TabletLayout';
 import MobileLayout from './layouts/MobileLayout/MobileLayout';
