@@ -21,7 +21,7 @@ export default function DesktopLayout() {
               <Route
                 exact
                 path={route.path}
-                key={route.path}
+                key={route.key}
                 component={route.component}
               />
             ))}

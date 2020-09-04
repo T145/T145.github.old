@@ -6,11 +6,10 @@ import {
   Toolbar,
   List,
   Typography,
+  Tooltip,
   IconButton,
 } from '@material-ui/core';
 
-import SunIcon from '@material-ui/icons/Brightness7Rounded';
-// import MoonIcon from '@material-ui/icons/NightsStayRounded';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import PaletteIcon from '@material-ui/icons/PaletteRounded';
 
@@ -35,20 +34,29 @@ function DesktopNavigator() {
 
           <div className={classes.content} />
 
-          <IconButton color="inherit">
-            <PaletteIcon />
-          </IconButton>
+          <Tooltip title="Edit colors" enterDelay={300}>
+            <IconButton
+              color="inherit"
+              aria-label="Edit colors"
+              data-ga-event-category="header"
+              data-ga-event-action="colors"
+            >
+              <PaletteIcon />
+            </IconButton>
+          </Tooltip>
 
-          <IconButton
-            color="inherit"
-            href="https://github.com/T145/T145.github.io"
-          >
-            <GitHubIcon />
-          </IconButton>
-
-          <IconButton color="inherit" edge="end">
-            <SunIcon />
-          </IconButton>
+          <Tooltip title="Github" enterDelay={300}>
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://github.com/T145/T145.github.io"
+              aria-label="GitHub"
+              data-ga-event-category="header"
+              data-ga-event-action="github"
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 
