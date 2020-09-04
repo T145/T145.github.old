@@ -8,7 +8,6 @@ interface OptionalProps {
 }
 
 interface ListLinkProps extends LinkProps, OptionalProps {
-  icon?: ReactNode;
   primary: string;
 }
 
