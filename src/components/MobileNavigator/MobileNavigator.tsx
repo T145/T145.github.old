@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Route, withRouter } from 'react-router-dom';
+import { isIOS } from 'react-device-detect';
 
 import {
   AppBar,
@@ -35,6 +36,33 @@ function MobileNavigator() {
 
   return (
     <div data-testid="MobileNavigator">
+      <SwipeableDrawer
+        anchor="bottom"
+        open={open}
+        onClose={handleDrawerClose}
+        onOpen={handleDrawerOpen}
+        disableBackdropTransition={!isIOS}
+        disableDiscovery={isIOS}
+      >
+        <div
+          className={classes.list}
+          role="presentation"
+          onClick={handleDrawerClose}
+          onKeyDown={handleDrawerClose}
+        >
+          <List>
+            {Routes.map(route => (
+              <ListLink
+                to={route.path}
+                primary={route.name}
+                icon={route.icon}
+                key={route.key}
+              />
+            ))}
+          </List>
+        </div>
+      </SwipeableDrawer>
+
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton
@@ -69,31 +97,6 @@ function MobileNavigator() {
           </IconButton>
         </Toolbar>
       </AppBar>
-
-      <SwipeableDrawer
-        anchor="bottom"
-        open={open}
-        onClose={handleDrawerClose}
-        onOpen={handleDrawerOpen}
-      >
-        <div
-          className={classes.list}
-          role="presentation"
-          onClick={handleDrawerClose}
-          onKeyDown={handleDrawerClose}
-        >
-          <List>
-            {Routes.map(route => (
-              <ListLink
-                to={route.path}
-                primary={route.name}
-                icon={route.icon}
-                key={route.key}
-              />
-            ))}
-          </List>
-        </div>
-      </SwipeableDrawer>
     </div>
   );
 }
