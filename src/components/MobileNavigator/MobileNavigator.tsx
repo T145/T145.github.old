@@ -1,34 +1,30 @@
 import React from 'react';
 
+import { Route, withRouter } from 'react-router-dom';
 import { isIOS } from 'react-device-detect';
 
 import {
   CssBaseline,
-  Drawer,
   AppBar,
   Toolbar,
   List,
   Typography,
-  Tooltip,
   IconButton,
   Paper,
   Fab,
   SwipeableDrawer,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider,
 } from '@material-ui/core';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import InboxIcon from '@material-ui/icons/Inbox';
-import MailIcon from '@material-ui/icons/Mail';
-import MobileStyle from '../../constants/MobileStyle/MobileStyle';
 
-export default function MobileNavigator() {
+import Routes from '../../routes';
+import MobileStyle from '../../constants/MobileStyle/MobileStyle';
+import ListLink from '../ListLink/ListLink';
+
+function MobileNavigator() {
   const classes = MobileStyle();
   const [open, setOpen] = React.useState(false);
 
@@ -92,24 +88,13 @@ export default function MobileNavigator() {
           onKeyDown={handleDrawerClose}
         >
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
+            {Routes.map(route => (
+              <ListLink
+                to={route.path}
+                primary={route.name}
+                icon={route.icon}
+                key={route.key}
+              />
             ))}
           </List>
         </div>
@@ -117,3 +102,5 @@ export default function MobileNavigator() {
     </div>
   );
 }
+
+export default withRouter(MobileNavigator);
