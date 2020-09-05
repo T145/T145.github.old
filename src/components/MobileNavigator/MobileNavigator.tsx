@@ -38,14 +38,6 @@ function MobileNavigator() {
 
   return (
     <div data-testid="MobileNavigator">
-      <CssBaseline />
-
-      <Paper square className={classes.paper}>
-        <Typography className={classes.text} variant="h5" gutterBottom>
-          #page-content
-        </Typography>
-      </Paper>
-
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton

@@ -10,8 +10,6 @@ export default function MobileLayout() {
   return (
     <Router>
       <div data-testid="MobileLayout">
-        <MobileNavigator />
-
         <main>
           <Switch>
             {Routes.map(route => (
@@ -24,6 +22,8 @@ export default function MobileLayout() {
             ))}
           </Switch>
         </main>
+
+        <MobileNavigator />
       </div>
     </Router>
   );
