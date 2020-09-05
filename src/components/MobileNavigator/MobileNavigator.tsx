@@ -63,6 +63,8 @@ function MobileNavigator() {
         </div>
       </SwipeableDrawer>
 
+      <div className={classes.offset} />
+
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           <IconButton
