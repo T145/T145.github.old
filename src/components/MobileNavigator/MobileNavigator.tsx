@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Route, withRouter } from 'react-router-dom';
 import { isIOS } from 'react-device-detect';
 
@@ -35,71 +34,72 @@ function MobileNavigator() {
   };
 
   return (
-    <div data-testid="MobileNavigator">
-      <SwipeableDrawer
-        anchor="bottom"
-        open={open}
-        onClose={handleDrawerClose}
-        onOpen={handleDrawerOpen}
-        disableBackdropTransition={!isIOS}
-        disableDiscovery={isIOS}
-      >
-        <div
-          className={classes.list}
-          role="presentation"
-          onClick={handleDrawerClose}
-          onKeyDown={handleDrawerClose}
+    <AppBar
+      data-testid="MobileNavigator"
+      position="fixed"
+      color="primary"
+      className={classes.appBar}
+    >
+      <Toolbar>
+        <SwipeableDrawer
+          anchor="bottom"
+          open={open}
+          onOpen={handleDrawerOpen}
+          onClose={handleDrawerClose}
+          disableBackdropTransition={!isIOS}
+          disableDiscovery={isIOS}
         >
-          <List>
-            {Routes.map(route => (
-              <ListLink
-                to={route.path}
-                primary={route.name}
-                icon={route.icon}
-                key={route.key}
-              />
-            ))}
-          </List>
-        </div>
-      </SwipeableDrawer>
-
-      <div className={classes.offset} />
-
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
+          <div
+            className={classes.drawer}
+            role="presentation"
+            onClick={handleDrawerClose}
+            onKeyDown={handleDrawerClose}
           >
-            <MenuIcon />
-          </IconButton>
+            <List>
+              {Routes.map(route => (
+                <ListLink
+                  to={route.path}
+                  primary={route.name}
+                  icon={route.icon}
+                  key={route.key}
+                />
+              ))}
+            </List>
+          </div>
+        </SwipeableDrawer>
 
-          <Route>
-            {({ location }) => (
-              <Typography variant="h6" color="inherit" noWrap>
-                {location.pathname}
-              </Typography>
-            )}
-          </Route>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+        >
+          <MenuIcon />
+        </IconButton>
 
-          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <AddIcon />
-          </Fab>
+        <Route>
+          {({ location }) => (
+            <Typography variant="h6" color="inherit" noWrap>
+              {location.pathname}
+            </Typography>
+          )}
+        </Route>
 
-          <div className={classes.grow} />
+        <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+          <AddIcon />
+        </Fab>
 
-          <IconButton color="inherit">
-            <SearchIcon />
-          </IconButton>
+        <div className={classes.grow} />
 
-          <IconButton edge="end" color="inherit">
-            <MoreIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </div>
+        <IconButton color="inherit">
+          <SearchIcon />
+        </IconButton>
+
+        <IconButton edge="end" color="inherit">
+          <MoreIcon />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   );
 }
 
