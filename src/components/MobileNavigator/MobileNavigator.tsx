@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Route, withRouter } from 'react-router-dom';
-import { isIOS } from 'react-device-detect';
 
 import {
   AppBar,
@@ -76,8 +75,6 @@ function MobileNavigator() {
         open={open}
         onClose={handleDrawerClose}
         onOpen={handleDrawerOpen}
-        disableBackdropTransition={!isIOS}
-        disableDiscovery={isIOS}
       >
         <div
           className={classes.list}
