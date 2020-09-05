@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { CssBaseline, Typography } from '@material-ui/core';
+
 import Routes from '../../routes';
 import MobileStyle from '../../constants/MobileStyle/MobileStyle';
 import MobileNavigator from '../../components/MobileNavigator/MobileNavigator';
@@ -10,7 +13,9 @@ export default function MobileLayout() {
   return (
     <Router>
       <div data-testid="MobileLayout">
-        <main>
+        <CssBaseline />
+
+        <Typography className={classes.text}>
           <Switch>
             {Routes.map(route => (
               <Route
@@ -21,8 +26,7 @@ export default function MobileLayout() {
               />
             ))}
           </Switch>
-        </main>
-
+        </Typography>
         <MobileNavigator />
       </div>
     </Router>

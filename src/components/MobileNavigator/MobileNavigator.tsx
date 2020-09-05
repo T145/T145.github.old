@@ -4,15 +4,13 @@ import { Route, withRouter } from 'react-router-dom';
 import { isIOS } from 'react-device-detect';
 
 import {
-  CssBaseline,
   AppBar,
   Toolbar,
-  List,
-  Typography,
   IconButton,
-  Paper,
+  Typography,
   Fab,
   SwipeableDrawer,
+  List,
 } from '@material-ui/core';
 
 import MenuIcon from '@material-ui/icons/Menu';
@@ -49,6 +47,14 @@ function MobileNavigator() {
             <MenuIcon />
           </IconButton>
 
+          <Route>
+            {({ location }) => (
+              <Typography variant="h6" color="inherit" noWrap>
+                {location.pathname}
+              </Typography>
+            )}
+          </Route>
+
           <Fab color="secondary" aria-label="add" className={classes.fabButton}>
             <AddIcon />
           </Fab>
@@ -68,8 +74,8 @@ function MobileNavigator() {
       <SwipeableDrawer
         anchor="bottom"
         open={open}
-        onOpen={handleDrawerOpen}
         onClose={handleDrawerClose}
+        onOpen={handleDrawerOpen}
         disableBackdropTransition={!isIOS}
         disableDiscovery={isIOS}
       >
