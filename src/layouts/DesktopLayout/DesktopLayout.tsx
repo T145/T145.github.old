@@ -9,11 +9,14 @@ import {
   Typography,
   Tooltip,
   IconButton,
+  Icon,
 } from '@material-ui/core';
 import { VscGithub as GithubIcon } from 'react-icons/vsc';
+import { FaMapSigns as SignIcon } from 'react-icons/fa';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
 import Footer from '../../components/Footer/Footer';
+import ElevationScroll from '../../components/ElevationScroll/ElevationScroll';
 
 const drawerWidth = 240;
 
@@ -34,6 +37,10 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerPaper: {
       width: drawerWidth,
     },
+    drawerBar: {
+      width: drawerWidth,
+      marginRight: `calc(100% - ${drawerWidth}px)`,
+    },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     content: {
@@ -49,33 +56,25 @@ export default function DesktopLayout() {
   return (
     <Router>
       <div className={classes.root} data-testid="DesktopLayout">
-        <AppBar position="fixed" className={classes.appBar}>
-          <Toolbar variant="dense">
-            <Route>
-              {({ location }) => (
-                <Typography variant="h6" color="inherit" noWrap>
-                  {location.pathname}
-                </Typography>
-              )}
-            </Route>
-
-            <div className={classes.content} />
-
-            <Tooltip title="Github" enterDelay={300}>
-              <IconButton
-                color="inherit"
-                component="a"
-                href="https://github.com/T145/T145.github.io"
-                aria-label="GitHub"
-                edge="end"
-                data-ga-event-category="header"
-                data-ga-event-action="github"
-              >
-                <GithubIcon />
-              </IconButton>
-            </Tooltip>
-          </Toolbar>
-        </AppBar>
+        <ElevationScroll>
+          <AppBar position="fixed" className={classes.appBar}>
+            <Toolbar variant="dense">
+              <Tooltip title="Github" enterDelay={300}>
+                <IconButton
+                  color="inherit"
+                  component="a"
+                  href="https://github.com/T145/T145.github.io"
+                  aria-label="GitHub"
+                  edge="start"
+                  data-ga-event-category="header"
+                  data-ga-event-action="github"
+                >
+                  <GithubIcon />
+                </IconButton>
+              </Tooltip>
+            </Toolbar>
+          </AppBar>
+        </ElevationScroll>
 
         <Drawer
           className={classes.drawer}
@@ -85,6 +84,28 @@ export default function DesktopLayout() {
           }}
           anchor="left"
         >
+          <ElevationScroll>
+            <AppBar color="secondary" className={classes.drawerBar}>
+              <Toolbar variant="dense">
+                <Icon color="inherit" fontSize="small">
+                  <SignIcon />
+                </Icon>
+
+                <div className={classes.content} />
+
+                <Route>
+                  {({ location }) => (
+                    <Typography color="inherit" variant="overline" noWrap>
+                      {location.pathname}
+                    </Typography>
+                  )}
+                </Route>
+              </Toolbar>
+            </AppBar>
+          </ElevationScroll>
+
+          <div className={classes.toolbar} />
+
           <List>
             {Routes.map(route => (
               <ListLink

@@ -7,7 +7,7 @@ interface OptionalProps {
   icon?: ReactNode;
 }
 
-interface ListLinkProps extends LinkProps, OptionalProps {
+interface Props extends LinkProps, OptionalProps {
   primary: string;
 }
 
@@ -15,7 +15,7 @@ const defaultProps: OptionalProps = {
   icon: <Empty />,
 };
 
-const ListLink = ({ icon, primary, to }: ListLinkProps) => {
+const ListLink = ({ icon, primary, to }: Props) => {
   const renderLink = useMemo(
     () =>
       forwardRef<never, Omit<LinkProps, 'to'>>((itemProps, ref) => (
