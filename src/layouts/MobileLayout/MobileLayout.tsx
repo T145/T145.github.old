@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { isIOS } from 'react-device-detect';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import {
-  CssBaseline,
   AppBar,
   SwipeableDrawer,
   Toolbar,
@@ -13,12 +12,12 @@ import {
   List,
 } from '@material-ui/core';
 import { FaMapSigns as SignIcon } from 'react-icons/fa';
-import {
-  FiChevronsUp as ChevronIcon,
-  FiMoreVertical as MoreIcon,
-} from 'react-icons/fi';
+import { FiChevronsUp as ChevronIcon } from 'react-icons/fi';
+import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
+import ElevationScroll from '../../components/ElevationScroll/ElevationScroll';
+import Footer from '../../components/Footer/Footer';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -61,8 +60,6 @@ export default function MobileLayout() {
 
   return (
     <Router>
-      <CssBaseline />
-
       <Typography className={classes.text} variant="h5" gutterBottom>
         <Switch>
           {Routes.map(route => (
@@ -76,55 +73,71 @@ export default function MobileLayout() {
         </Switch>
       </Typography>
 
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar>
-          <SwipeableDrawer
-            anchor="bottom"
-            open={open}
-            onOpen={handleDrawerOpen}
-            onClose={handleDrawerClose}
-            disableBackdropTransition={!isIOS}
-            disableDiscovery={isIOS}
-          >
-            <div
-              className={classes.drawer}
-              role="presentation"
-              onClick={handleDrawerClose}
-              onKeyDown={handleDrawerClose}
+      <ElevationScroll>
+        <AppBar position="fixed" color="primary" className={classes.appBar}>
+          <Toolbar>
+            <SwipeableDrawer
+              anchor="bottom"
+              open={open}
+              onOpen={handleDrawerOpen}
+              onClose={handleDrawerClose}
+              disableBackdropTransition={!isIOS}
+              disableDiscovery={isIOS}
             >
-              <List>
-                {Routes.map(route => (
-                  <ListLink
-                    to={route.path}
-                    primary={route.name}
-                    icon={route.icon}
-                    key={route.key}
-                  />
-                ))}
-              </List>
-            </div>
-          </SwipeableDrawer>
+              <div
+                className={classes.drawer}
+                role="presentation"
+                onClick={handleDrawerClose}
+                onKeyDown={handleDrawerClose}
+              >
+                <List>
+                  {Routes.map(route => (
+                    <ListLink
+                      to={route.path}
+                      primary={route.name}
+                      icon={route.icon}
+                      key={route.key}
+                    />
+                  ))}
+                </List>
+              </div>
+            </SwipeableDrawer>
 
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-          >
-            <SignIcon />
-          </IconButton>
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+            >
+              <SignIcon />
+            </IconButton>
 
-          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <ChevronIcon />
-          </Fab>
+            <Fab
+              color="secondary"
+              aria-label="add"
+              className={classes.fabButton}
+            >
+              <ChevronIcon />
+            </Fab>
 
-          <div className={classes.grow} />
+            <div className={classes.grow} />
 
-          <IconButton edge="end" color="inherit">
-            <MoreIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+            <IconButton
+              color="inherit"
+              component="a"
+              href="https://github.com/T145/T145.github.io"
+              aria-label="GitHub"
+              edge="end"
+              data-ga-event-category="header"
+              data-ga-event-action="github"
+            >
+              <GithubIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+
+      <Footer />
     </Router>
   );
 }
