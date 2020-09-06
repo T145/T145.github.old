@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       right: 0,
       margin: '0 auto',
     },
+    toolbar: theme.mixins.toolbar,
     drawer: {
       width: 'auto',
     },
@@ -75,6 +76,8 @@ export default function MobileLayout() {
         </Typography>
 
         <Footer />
+
+        <div className={classes.toolbar} />
       </div>
 
       <ElevationScroll>
