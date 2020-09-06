@@ -4,7 +4,16 @@ export default makeStyles((theme: Theme) =>
   createStyles({
     text: {
       padding: theme.spacing(2, 2, 0),
+    },
+    paper: {
       paddingBottom: 50,
+    },
+    list: {
+      width: 'auto',
+      marginBottom: theme.spacing(2),
+    },
+    subheader: {
+      backgroundColor: theme.palette.background.paper,
     },
     appBar: {
       top: 'auto',
@@ -21,8 +30,6 @@ export default makeStyles((theme: Theme) =>
       right: 0,
       margin: '0 auto',
     },
-    drawer: {
-      width: 'auto',
-    },
+    offset: theme.mixins.toolbar,
   })
 );

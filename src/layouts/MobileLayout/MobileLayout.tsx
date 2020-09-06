@@ -1,13 +1,63 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { CssBaseline, Typography } from '@material-ui/core';
+import { isIOS } from 'react-device-detect';
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import {
+  CssBaseline,
+  AppBar,
+  SwipeableDrawer,
+  Toolbar,
+  Typography,
+  IconButton,
+  Fab,
+  List,
+} from '@material-ui/core';
 
+import MenuIcon from '@material-ui/icons/Menu';
+import AddIcon from '@material-ui/icons/Add';
+import SearchIcon from '@material-ui/icons/Search';
+import MoreIcon from '@material-ui/icons/MoreVert';
 import Routes from '../../routes';
-import MobileStyle from '../../constants/MobileStyle/MobileStyle';
-import MobileNavigator from '../../components/MobileNavigator/MobileNavigator';
+import ListLink from '../../components/ListLink/ListLink';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    text: {
+      padding: theme.spacing(2, 2, 0),
+      paddingBottom: 50,
+    },
+    appBar: {
+      top: 'auto',
+      bottom: 0,
+    },
+    grow: {
+      flexGrow: 1,
+    },
+    fabButton: {
+      position: 'absolute',
+      zIndex: 1,
+      top: -30,
+      left: 0,
+      right: 0,
+      margin: '0 auto',
+    },
+    drawer: {
+      width: 'auto',
+    },
+  })
+);
 
 export default function MobileLayout() {
-  const classes = MobileStyle();
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Router>
@@ -26,7 +76,58 @@ export default function MobileLayout() {
         </Switch>
       </Typography>
 
-      <MobileNavigator />
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <Toolbar>
+          <SwipeableDrawer
+            anchor="bottom"
+            open={open}
+            onOpen={handleDrawerOpen}
+            onClose={handleDrawerClose}
+            disableBackdropTransition={!isIOS}
+            disableDiscovery={isIOS}
+          >
+            <div
+              className={classes.drawer}
+              role="presentation"
+              onClick={handleDrawerClose}
+              onKeyDown={handleDrawerClose}
+            >
+              <List>
+                {Routes.map(route => (
+                  <ListLink
+                    to={route.path}
+                    primary={route.name}
+                    icon={route.icon}
+                    key={route.key}
+                  />
+                ))}
+              </List>
+            </div>
+          </SwipeableDrawer>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+            <AddIcon />
+          </Fab>
+
+          <div className={classes.grow} />
+
+          <IconButton color="inherit">
+            <SearchIcon />
+          </IconButton>
+
+          <IconButton edge="end" color="inherit">
+            <MoreIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Router>
   );
 }
