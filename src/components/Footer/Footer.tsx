@@ -1,9 +1,17 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { isMobileOnly } from 'react-device-detect';
+import Grid from '@material-ui/core/Grid';
 import Copyright from './Copyright/Copyright';
 import Pokemon from './PokemonSprite/PokemonSprite';
 
 export default function Footer() {
+  const spriteCount = isMobileOnly ? 1 : 2;
+  const sprites = [];
+
+  for (let i = 0; i < spriteCount; i += 1) {
+    sprites.push(<Pokemon />);
+  }
+
   return (
     <Grid
       container
@@ -12,11 +20,9 @@ export default function Footer() {
       alignItems="center"
       data-testid="Footer"
     >
-      <Pokemon />
-      <Pokemon />
+      {sprites}
       <Copyright />
-      <Pokemon />
-      <Pokemon />
+      {sprites}
     </Grid>
   );
 }
