@@ -60,20 +60,22 @@ export default function MobileLayout() {
 
   return (
     <Router>
-      <Typography className={classes.text} variant="h5" gutterBottom>
-        <Switch>
-          {Routes.map(route => (
-            <Route
-              exact
-              path={route.path}
-              key={route.key}
-              component={route.component}
-            />
-          ))}
-        </Switch>
+      <div>
+        <Typography className={classes.text} variant="h5" gutterBottom>
+          <Switch>
+            {Routes.map(route => (
+              <Route
+                exact
+                path={route.path}
+                key={route.key}
+                component={route.component}
+              />
+            ))}
+          </Switch>
+        </Typography>
 
         <Footer />
-      </Typography>
+      </div>
 
       <ElevationScroll>
         <AppBar position="fixed" color="primary" className={classes.appBar}>
