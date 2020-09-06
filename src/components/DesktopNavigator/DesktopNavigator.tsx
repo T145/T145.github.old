@@ -9,7 +9,10 @@ import {
   Tooltip,
   IconButton,
 } from '@material-ui/core';
-import { VscGithub as GithubIcon } from 'react-icons/vsc';
+
+import GitHubIcon from '@material-ui/icons/GitHub';
+import PaletteIcon from '@material-ui/icons/PaletteRounded';
+
 import Routes from '../../routes';
 import DesktopStyle from '../../constants/DesktopStyle/DesktopStyle';
 import ListLink from '../ListLink/ListLink';
@@ -31,6 +34,17 @@ function DesktopNavigator() {
 
           <div className={classes.content} />
 
+          <Tooltip title="Edit colors" enterDelay={300}>
+            <IconButton
+              color="inherit"
+              aria-label="Edit colors"
+              data-ga-event-category="header"
+              data-ga-event-action="colors"
+            >
+              <PaletteIcon />
+            </IconButton>
+          </Tooltip>
+
           <Tooltip title="Github" enterDelay={300}>
             <IconButton
               color="inherit"
@@ -40,7 +54,7 @@ function DesktopNavigator() {
               data-ga-event-category="header"
               data-ga-event-action="github"
             >
-              <GithubIcon />
+              <GitHubIcon />
             </IconButton>
           </Tooltip>
         </Toolbar>
