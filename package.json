@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://T145.github.io",
   "scripts": {
-    "browser": "npx browserslist --update-db",
     "build": "react-scripts build",
     "build-storybook": "build-storybook -s public",
     "predeploy": "yarn build",
@@ -55,7 +54,7 @@
     "react-player": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "react-test-renderer": "latest",
+    "react-test-renderer": "^16.13.1",
     "typescript": "latest",
     "webpack": "4.42.0"
   },
