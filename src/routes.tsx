@@ -1,6 +1,6 @@
 import React from 'react';
-import HomeIcon from '@material-ui/icons/HomeRounded';
-import SpecialFolderIcon from '@material-ui/icons/FolderSpecialRounded';
+import { GiFamilyHouse as HouseIcon } from 'react-icons/gi';
+import { SiInternetarchive as ArchiveIcon } from 'react-icons/si';
 import Home from './pages/HomePage/HomePage';
 import Archive from './pages/ArchivePage/ArchivePage';
 
@@ -14,14 +14,14 @@ const Routes = [
     key: 100,
     path: '/',
     name: 'Home',
-    icon: <HomeIcon />,
+    icon: <HouseIcon />,
     component: Home,
   },
   {
     key: 101,
     path: '/archive',
     name: 'Archive',
-    icon: <SpecialFolderIcon />,
+    icon: <ArchiveIcon />,
     component: Archive,
   },
 ];

@@ -10,8 +10,7 @@ import {
   Tooltip,
   IconButton,
 } from '@material-ui/core';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import PaletteIcon from '@material-ui/icons/PaletteRounded';
+import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
 import Footer from '../../components/Footer/Footer';
@@ -62,27 +61,17 @@ export default function DesktopLayout() {
 
             <div className={classes.content} />
 
-            <Tooltip title="Edit colors" enterDelay={300}>
-              <IconButton
-                color="inherit"
-                aria-label="Edit colors"
-                data-ga-event-category="header"
-                data-ga-event-action="colors"
-              >
-                <PaletteIcon />
-              </IconButton>
-            </Tooltip>
-
             <Tooltip title="Github" enterDelay={300}>
               <IconButton
                 color="inherit"
                 component="a"
                 href="https://github.com/T145/T145.github.io"
                 aria-label="GitHub"
+                edge="end"
                 data-ga-event-category="header"
                 data-ga-event-action="github"
               >
-                <GitHubIcon />
+                <GithubIcon />
               </IconButton>
             </Tooltip>
           </Toolbar>

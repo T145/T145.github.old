@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "@material-ui/core": "latest",
-    "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
     "@storybook/react": "latest",
     "@testing-library/dom": "latest",
@@ -51,6 +50,7 @@
     "react": "latest",
     "react-device-detect": "latest",
     "react-dom": "latest",
+    "react-icons": "latest",
     "react-is": "latest",
     "react-player": "latest",
     "react-router-dom": "latest",

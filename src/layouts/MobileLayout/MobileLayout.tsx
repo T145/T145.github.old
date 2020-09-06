@@ -12,10 +12,11 @@ import {
   Fab,
   List,
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import AddIcon from '@material-ui/icons/Add';
-import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
+import { FaMapSigns as SignIcon } from 'react-icons/fa';
+import {
+  FiChevronsUp as ChevronIcon,
+  FiMoreVertical as MoreIcon,
+} from 'react-icons/fi';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
 
@@ -103,24 +104,21 @@ export default function MobileLayout() {
               </List>
             </div>
           </SwipeableDrawer>
+
           <IconButton
             edge="start"
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
           >
-            <MenuIcon />
+            <SignIcon />
           </IconButton>
 
           <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <AddIcon />
+            <ChevronIcon />
           </Fab>
 
           <div className={classes.grow} />
-
-          <IconButton color="inherit">
-            <SearchIcon />
-          </IconButton>
 
           <IconButton edge="end" color="inherit">
             <MoreIcon />
