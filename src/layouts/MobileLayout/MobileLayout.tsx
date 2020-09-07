@@ -62,6 +62,8 @@ export default function MobileLayout() {
   return (
     <Router>
       <Typography className={classes.text} variant="h5" gutterBottom>
+        <Toolbar id="back-to-top-anchor" />
+
         <Switch>
           {Routes.map(route => (
             <Route
@@ -78,7 +80,7 @@ export default function MobileLayout() {
       </Typography>
 
       <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar id="back-to-top-anchor">
+        <Toolbar>
           <SwipeableDrawer
             anchor="bottom"
             open={open}
