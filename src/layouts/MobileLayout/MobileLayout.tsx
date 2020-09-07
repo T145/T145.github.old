@@ -78,7 +78,7 @@ export default function MobileLayout() {
       </Typography>
 
       <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar id="back-to-top-anchor">
           <SwipeableDrawer
             anchor="bottom"
             open={open}
