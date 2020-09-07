@@ -84,25 +84,23 @@ export default function DesktopLayout() {
           }}
           anchor="left"
         >
-          <ElevationScroll>
-            <AppBar color="secondary" className={classes.drawerBar}>
-              <Toolbar variant="dense">
-                <Icon color="inherit" fontSize="small">
-                  <SignIcon />
-                </Icon>
+          <AppBar color="secondary" className={classes.drawerBar}>
+            <Toolbar variant="dense">
+              <Icon color="inherit" fontSize="small">
+                <SignIcon />
+              </Icon>
 
-                <div className={classes.content} />
+              <div className={classes.content} />
 
-                <Route>
-                  {({ location }) => (
-                    <Typography color="inherit" variant="overline" noWrap>
-                      {location.pathname}
-                    </Typography>
-                  )}
-                </Route>
-              </Toolbar>
-            </AppBar>
-          </ElevationScroll>
+              <Route>
+                {({ location }) => (
+                  <Typography color="inherit" variant="overline" noWrap>
+                    {location.pathname}
+                  </Typography>
+                )}
+              </Route>
+            </Toolbar>
+          </AppBar>
 
           <div className={classes.toolbar} />
 
