@@ -33,12 +33,12 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     fabButton: {
-      position: 'absolute',
+      position: 'fixed',
       zIndex: 1,
       top: -30,
       left: 0,
       right: 0,
-      margin: '0 auto',
+      // margin: '0 auto',
     },
     toolbar: theme.mixins.toolbar,
     drawer: {
