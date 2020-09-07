@@ -16,8 +16,8 @@ import { FiChevronsUp as ChevronIcon } from 'react-icons/fi';
 import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
-import ElevationScroll from '../../components/ElevationScroll/ElevationScroll';
 import Footer from '../../components/Footer/Footer';
+import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -75,10 +75,9 @@ export default function MobileLayout() {
 
         <Footer />
         <div className={classes.toolbar} />
-        <div className={classes.toolbar} />
       </Typography>
 
-      <ElevationScroll>
+      <ScrollTop>
         <AppBar position="fixed" color="primary" className={classes.appBar}>
           <Toolbar>
             <SwipeableDrawer
@@ -119,7 +118,7 @@ export default function MobileLayout() {
 
             <Fab
               color="secondary"
-              aria-label="add"
+              aria-label="scroll back to top"
               className={classes.fabButton}
             >
               <ChevronIcon />
@@ -140,7 +139,7 @@ export default function MobileLayout() {
             </IconButton>
           </Toolbar>
         </AppBar>
-      </ElevationScroll>
+      </ScrollTop>
     </Router>
   );
 }
