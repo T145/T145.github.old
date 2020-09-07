@@ -77,45 +77,45 @@ export default function MobileLayout() {
         <div className={classes.toolbar} />
       </Typography>
 
-      <ScrollTop>
-        <AppBar position="fixed" color="primary" className={classes.appBar}>
-          <Toolbar>
-            <SwipeableDrawer
-              anchor="bottom"
-              open={open}
-              onOpen={handleDrawerOpen}
-              onClose={handleDrawerClose}
-              disableBackdropTransition={!isIOS}
-              disableDiscovery={isIOS}
+      <AppBar position="fixed" color="primary" className={classes.appBar}>
+        <Toolbar>
+          <SwipeableDrawer
+            anchor="bottom"
+            open={open}
+            onOpen={handleDrawerOpen}
+            onClose={handleDrawerClose}
+            disableBackdropTransition={!isIOS}
+            disableDiscovery={isIOS}
+          >
+            <div
+              className={classes.drawer}
+              role="presentation"
+              onClick={handleDrawerClose}
+              onKeyDown={handleDrawerClose}
             >
-              <div
-                className={classes.drawer}
-                role="presentation"
-                onClick={handleDrawerClose}
-                onKeyDown={handleDrawerClose}
-              >
-                <List>
-                  {Routes.map(route => (
-                    <ListLink
-                      to={route.path}
-                      primary={route.name}
-                      icon={route.icon}
-                      key={route.key}
-                    />
-                  ))}
-                </List>
-              </div>
-            </SwipeableDrawer>
+              <List>
+                {Routes.map(route => (
+                  <ListLink
+                    to={route.path}
+                    primary={route.name}
+                    icon={route.icon}
+                    key={route.key}
+                  />
+                ))}
+              </List>
+            </div>
+          </SwipeableDrawer>
 
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-            >
-              <SignIcon />
-            </IconButton>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+          >
+            <SignIcon />
+          </IconButton>
 
+          <ScrollTop>
             <Fab
               color="secondary"
               aria-label="scroll back to top"
@@ -123,23 +123,23 @@ export default function MobileLayout() {
             >
               <ChevronIcon />
             </Fab>
+          </ScrollTop>
 
-            <div className={classes.grow} />
+          <div className={classes.grow} />
 
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://github.com/T145/T145.github.io"
-              aria-label="GitHub"
-              edge="end"
-              data-ga-event-category="header"
-              data-ga-event-action="github"
-            >
-              <GithubIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-      </ScrollTop>
+          <IconButton
+            color="inherit"
+            component="a"
+            href="https://github.com/T145/T145.github.io"
+            aria-label="GitHub"
+            edge="end"
+            data-ga-event-category="header"
+            data-ga-event-action="github"
+          >
+            <GithubIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
     </Router>
   );
 }
