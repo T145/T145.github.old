@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
       top: -30,
       left: 0,
       right: 0,
-      margin: '0 auto',
     },
     toolbar: theme.mixins.toolbar,
     drawer: {
@@ -75,7 +74,6 @@ function MobileLayout() {
         </Switch>
 
         <Footer />
-        <div className={classes.toolbar} />
       </Typography>
 
       <AppBar color="primary" className={classes.appBar}>

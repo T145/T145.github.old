@@ -17,7 +17,7 @@ const theme = createMuiTheme({
       position: 'fixed',
     },
     MuiToolbar: {
-      variant: 'dense',
+      variant: isMobile ? 'regular' : 'dense', // dense is desktop only
     },
   },
   palette: {
