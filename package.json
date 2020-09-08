@@ -5,16 +5,16 @@
   "homepage": "https://T145.github.io",
   "scripts": {
     "browser": "npx browserslist --update-db",
-    "build": "react-scripts build",
+    "build": "react-app-rewired build",
     "build-storybook": "build-storybook -s public",
-    "predeploy": "react-scripts build",
+    "predeploy": "react-app-rewired build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --quiet",
     "lint-fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "start": "react-app-rewired start",
     "storybook": "start-storybook -p 6006 -s public",
-    "test": "react-scripts test"
+    "test": "react-app-rewired test"
   },
   "browserslist": {
     "production": [
@@ -71,8 +71,8 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "babel-loader": "latest",
-    "babel-plugin-import": "^1.13.0",
-    "customize-cra": "^1.0.0",
+    "babel-plugin-import": "latest",
+    "customize-cra": "latest",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "latest",
     "eslint-config-prettier": "latest",
@@ -83,7 +83,7 @@
     "eslint-plugin-react-hooks": "latest",
     "gh-pages": "latest",
     "prettier": "latest",
-    "react-app-rewired": "^2.1.6",
+    "react-app-rewired": "latest",
     "sort-package-json": "latest"
   }
 }
