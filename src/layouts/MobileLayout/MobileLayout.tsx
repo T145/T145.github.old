@@ -9,14 +9,9 @@ import {
   Typography,
   IconButton,
   Icon,
-  Fab,
   List,
-  Slide,
-  useScrollTrigger,
-  Zoom,
 } from '@material-ui/core';
 import { FaMapSigns as SignIcon } from 'react-icons/fa';
-import { BsChevronBarUp as ChevronIcon } from 'react-icons/bs';
 import { VscGithub as GitHubIcon } from 'react-icons/vsc';
 import { AiOutlineBars as BarsIcon } from 'react-icons/ai';
 import Routes from '../../routes';
@@ -40,10 +35,8 @@ const useStyles = makeStyles((theme: Theme) =>
     grow: {
       flexGrow: 1,
     },
-    scrollFab: {
-      position: 'fixed',
-      bottom: theme.spacing(2),
-      right: theme.spacing(2),
+    drawer: {
+      width: 'auto',
     },
   })
 );
@@ -58,21 +51,6 @@ function MobileLayout() {
 
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 100,
-  });
-
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const anchor = (
-      (event.target as HTMLDivElement).ownerDocument || document
-    ).querySelector('#back-to-top-anchor');
-
-    if (anchor) {
-      anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
   };
 
   return (
@@ -112,18 +90,6 @@ function MobileLayout() {
         <Footer />
       </div>
 
-      <Zoom in={trigger}>
-        <div
-          onClick={handleClick}
-          role="presentation"
-          className={classes.scrollFab}
-        >
-          <Fab color="secondary" size="small" aria-label="scroll back to top">
-            <ChevronIcon />
-          </Fab>
-        </div>
-      </Zoom>
-
       <div className={classes.toolbar} />
 
       <AppBar className={classes.appBar}>
@@ -144,6 +110,33 @@ function MobileLayout() {
           <IconButton edge="end" aria-label="open drawer">
             <BarsIcon />
           </IconButton>
+
+          <SwipeableDrawer
+            anchor="bottom"
+            open={open}
+            onOpen={handleDrawerOpen}
+            onClose={handleDrawerClose}
+            disableBackdropTransition={!isIOS}
+            disableDiscovery={isIOS}
+          >
+            <div
+              className={classes.drawer}
+              role="presentation"
+              onClick={handleDrawerClose}
+              onKeyDown={handleDrawerClose}
+            >
+              <List>
+                {Routes.map(route => (
+                  <ListLink
+                    to={route.path}
+                    primary={route.name}
+                    icon={route.icon}
+                    key={route.key}
+                  />
+                ))}
+              </List>
+            </div>
+          </SwipeableDrawer>
         </Toolbar>
       </AppBar>
     </div>
