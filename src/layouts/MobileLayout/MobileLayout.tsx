@@ -107,7 +107,11 @@ function MobileLayout() {
 
           <div className={classes.grow} />
 
-          <IconButton edge="end" aria-label="open drawer">
+          <IconButton
+            edge="end"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+          >
             <BarsIcon />
           </IconButton>
 
