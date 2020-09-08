@@ -16,7 +16,6 @@ import { FaMapSigns as SignIcon } from 'react-icons/fa';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
 import Footer from '../../components/Footer/Footer';
-import ElevationScroll from '../../components/ElevationScroll/ElevationScroll';
 
 const drawerWidth = 240;
 
@@ -41,8 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: drawerWidth,
       marginRight: `calc(100% - ${drawerWidth}px)`,
     },
-    // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
+    toolbar: theme.mixins.toolbar, // necessary for content to be below app bar
     content: {
       flexGrow: 1,
       padding: theme.spacing(3),
@@ -56,25 +54,23 @@ export default function DesktopLayout() {
   return (
     <Router>
       <div className={classes.root} data-testid="DesktopLayout">
-        <ElevationScroll>
-          <AppBar position="fixed" className={classes.appBar}>
-            <Toolbar variant="dense">
-              <Tooltip title="Github" enterDelay={300}>
-                <IconButton
-                  color="inherit"
-                  component="a"
-                  href="https://github.com/T145/T145.github.io"
-                  aria-label="GitHub"
-                  edge="start"
-                  data-ga-event-category="header"
-                  data-ga-event-action="github"
-                >
-                  <GithubIcon />
-                </IconButton>
-              </Tooltip>
-            </Toolbar>
-          </AppBar>
-        </ElevationScroll>
+        <AppBar position="fixed" className={classes.appBar}>
+          <Toolbar variant="dense">
+            <Tooltip title="Github" enterDelay={300}>
+              <IconButton
+                color="inherit"
+                component="a"
+                href="https://github.com/T145/T145.github.io"
+                aria-label="GitHub"
+                edge="start"
+                data-ga-event-category="header"
+                data-ga-event-action="github"
+              >
+                <GithubIcon />
+              </IconButton>
+            </Tooltip>
+          </Toolbar>
+        </AppBar>
 
         <Drawer
           className={classes.drawer}

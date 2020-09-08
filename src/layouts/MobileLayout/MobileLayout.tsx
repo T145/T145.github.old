@@ -17,7 +17,6 @@ import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import Routes from '../../routes';
 import ListLink from '../../components/ListLink/ListLink';
 import Footer from '../../components/Footer/Footer';
-import ScrollTop from '../../components/ScrollTop/ScrollTop';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -62,8 +61,6 @@ export default function MobileLayout() {
   return (
     <Router>
       <Typography className={classes.text} variant="h5" gutterBottom>
-        <Toolbar id="back-to-top-anchor" />
-
         <Switch>
           {Routes.map(route => (
             <Route
@@ -117,15 +114,13 @@ export default function MobileLayout() {
             <SignIcon />
           </IconButton>
 
-          <ScrollTop>
-            <Fab
-              color="secondary"
-              aria-label="scroll back to top"
-              className={classes.fabButton}
-            >
-              <ChevronIcon />
-            </Fab>
-          </ScrollTop>
+          <Fab
+            color="secondary"
+            aria-label="scroll back to top"
+            className={classes.fabButton}
+          >
+            <ChevronIcon />
+          </Fab>
 
           <div className={classes.grow} />
 

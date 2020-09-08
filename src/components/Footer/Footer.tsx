@@ -1,17 +1,19 @@
 import React from 'react';
-import { isMobileOnly } from 'react-device-detect';
-import Grid from '@material-ui/core/Grid';
-import Copyright from './Copyright/Copyright';
-import Pokemon from './PokemonSprite/PokemonSprite';
+import { Grid, Typography, Link } from '@material-ui/core';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" data-testid="Copyright">
+      {'Copyright © '}
+      <Link color="inherit" href="https://github.com/T145">
+        T145
+      </Link>{' '}
+      {new Date().getFullYear()}.
+    </Typography>
+  );
+}
 
 export default function Footer() {
-  const spriteCount = isMobileOnly ? 1 : 2;
-  const sprites = [];
-
-  for (let i = 0; i < spriteCount; i += 1) {
-    sprites.push(<Pokemon />);
-  }
-
   return (
     <Grid
       container
@@ -20,9 +22,7 @@ export default function Footer() {
       alignItems="center"
       data-testid="Footer"
     >
-      {sprites}
       <Copyright />
-      {sprites}
     </Grid>
   );
 }

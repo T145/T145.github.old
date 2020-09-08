@@ -1,7 +1,6 @@
 import React, { ReactNode, useMemo, forwardRef } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import Empty from '../EmptyNode/EmptyNode';
 
 interface OptionalProps {
   icon?: ReactNode;
@@ -12,7 +11,7 @@ interface Props extends LinkProps, OptionalProps {
 }
 
 const defaultProps: OptionalProps = {
-  icon: <Empty />,
+  icon: <></>,
 };
 
 const ListLink = ({ icon, primary, to }: Props) => {

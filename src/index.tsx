@@ -1,7 +1,9 @@
+/* eslint-disable no-restricted-imports */
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 import { isMobile, isTablet } from 'react-device-detect';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Shadows } from '@material-ui/core/styles/shadows';
 import { red } from '@material-ui/core/colors';
 import 'fontsource-roboto'; // required for Material UI
 import TabletLayout from './layouts/TabletLayout/TabletLayout';
@@ -23,6 +25,7 @@ const theme = createMuiTheme({
       default: '#fff',
     },
   },
+  shadows: Array(25).fill('none') as Shadows,
 });
 
 function getLayout() {
