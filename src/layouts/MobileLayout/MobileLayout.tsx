@@ -40,13 +40,10 @@ const useStyles = makeStyles((theme: Theme) =>
     grow: {
       flexGrow: 1,
     },
-    fabButton: {
-      position: 'absolute',
-      zIndex: 1,
-      top: -30,
-      left: 0,
-      right: 0,
-      margin: '0 auto',
+    scrollFab: {
+      position: 'fixed',
+      bottom: theme.spacing(2),
+      right: theme.spacing(2),
     },
   })
 );
@@ -80,25 +77,23 @@ function MobileLayout() {
 
   return (
     <div className={classes.root} data-testid="MobileLayout">
-      <Slide appear={false} direction="down">
-        <AppBar color="secondary">
-          <Toolbar id="back-to-top-anchor">
-            <Icon color="inherit" fontSize="small">
-              <SignIcon />
-            </Icon>
+      <AppBar color="secondary">
+        <Toolbar id="back-to-top-anchor">
+          <Icon color="inherit" fontSize="small">
+            <SignIcon />
+          </Icon>
 
-            <div className={classes.content} />
+          <div className={classes.grow} />
 
-            <Route>
-              {({ location }) => (
-                <Typography color="inherit" variant="overline" noWrap>
-                  {location.pathname}
-                </Typography>
-              )}
-            </Route>
-          </Toolbar>
-        </AppBar>
-      </Slide>
+          <Route>
+            {({ location }) => (
+              <Typography color="inherit" variant="overline" noWrap>
+                {location.pathname}
+              </Typography>
+            )}
+          </Route>
+        </Toolbar>
+      </AppBar>
 
       <div className={classes.toolbar} />
 
@@ -117,6 +112,18 @@ function MobileLayout() {
         <Footer />
       </div>
 
+      <Zoom in={trigger}>
+        <div
+          onClick={handleClick}
+          role="presentation"
+          className={classes.scrollFab}
+        >
+          <Fab color="secondary" size="small" aria-label="scroll back to top">
+            <ChevronIcon />
+          </Fab>
+        </div>
+      </Zoom>
+
       <div className={classes.toolbar} />
 
       <AppBar className={classes.appBar}>
@@ -131,18 +138,6 @@ function MobileLayout() {
           >
             <GitHubIcon />
           </IconButton>
-
-          <Zoom in={trigger}>
-            <div onClick={handleClick} role="presentation">
-              <Fab
-                className={classes.fabButton}
-                color="secondary"
-                aria-label="scroll to top"
-              >
-                <ChevronIcon />
-              </Fab>
-            </div>
-          </Zoom>
 
           <div className={classes.grow} />
 
