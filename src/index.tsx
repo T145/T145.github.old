@@ -13,11 +13,11 @@ import DesktopLayout from './layouts/DesktopLayout/DesktopLayout';
 
 const theme = createMuiTheme({
   props: {
-    MuiAppBar: {
-      position: 'fixed',
-    },
     MuiToolbar: {
       variant: isMobile ? 'regular' : 'dense', // dense is desktop only
+    },
+    MuiIconButton: {
+      color: 'inherit', // 'default' by default
     },
   },
   palette: {
