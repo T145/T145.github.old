@@ -1,11 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { GiFamilyHouse as HouseIcon } from 'react-icons/gi';
+import {
+  GiFamilyHouse as HouseIcon,
+  GiTreasureMap as MapIcon,
+  GiTrophy as TrophyIcon,
+  GiMetalBar as MetalBarIcon,
+} from 'react-icons/gi';
 import { SiInternetarchive as ArchiveIcon } from 'react-icons/si';
 import List from '@material-ui/core/List';
 import ListLink from './components/ListLink/ListLink';
 import Home from './pages/HomePage/HomePage';
 import Archive from './pages/ArchivePage/ArchivePage';
+import TravelingSalesman from './pages/TravelingSalesmanPage/TravelingSalesmanPage';
+import ProgrammingContests from './pages/ProgrammingContestsPage/ProgrammingContestsPage';
+import MetalChests from './pages/MetalChestsPage/MetalChestsPage';
 
 /*
  Route keys are hardcoded as opposed to using
@@ -26,6 +34,27 @@ const Routes = [
     name: 'Archive',
     icon: <ArchiveIcon />,
     component: Archive,
+  },
+  {
+    key: 102,
+    path: '/travelingSalesman',
+    name: 'Traveling Salesman',
+    icon: <MapIcon />,
+    component: TravelingSalesman,
+  },
+  {
+    key: 103,
+    path: '/programmingContests',
+    name: 'Programming Contests',
+    icon: <TrophyIcon />,
+    component: ProgrammingContests,
+  },
+  {
+    key: 104,
+    path: '/metalChests',
+    name: 'Metal Chests',
+    icon: <MetalBarIcon />,
+    component: MetalChests,
   },
 ];
 
