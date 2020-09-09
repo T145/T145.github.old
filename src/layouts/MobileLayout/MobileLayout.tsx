@@ -89,6 +89,7 @@ function MobileLayout() {
             edge="start"
             data-ga-event-category="header"
             data-ga-event-action="github"
+            rel="noreferrer"
           >
             <GitHubIcon />
           </IconButton>

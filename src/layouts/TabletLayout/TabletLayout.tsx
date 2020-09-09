@@ -153,6 +153,7 @@ function TabletLayout() {
             edge="start"
             data-ga-event-category="header"
             data-ga-event-action="github"
+            rel="noreferrer"
           >
             <GithubIcon />
           </IconButton>
