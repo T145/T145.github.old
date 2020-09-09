@@ -1,42 +1,73 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Link,
+} from '@material-ui/core';
+import { FaRegSmileWink as SmileIcon } from 'react-icons/fa';
 
 export default function HomePage() {
   return (
     <div data-testid="HomePage">
-      <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        Home Page
-      </Typography>
+      <Grid container spacing={2}>
+        <Grid item>
+          <Typography component="h2" variant="h6" color="primary" gutterBottom>
+            Welcome to T145&rsquo;s Github Documentation website!
+          </Typography>
 
-      <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
-        non enim praesent elementum facilisis leo vel. Risus at ultrices mi
-        tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non
-        tellus. Convallis convallis tellus id interdum velit laoreet id donec
-        ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl
-        suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod
-        quis viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet
-        proin fermentum leo. Mauris commodo quis imperdiet massa tincidunt. Cras
-        tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum
-        varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt.
-        Lorem donec massa sapien faucibus et molestie ac.
-      </Typography>
+          <Typography paragraph>
+            This project was made to fulfill the following desires:
+            <List>
+              <ListItem>
+                <ListItemText
+                  primary="&#8226; Render views in HTML5 to allow maximum customization"
+                  secondary="Because Github's markdown rendering generates archaic HTML"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="&#8226; Remove the need to copy-paste similar READMEs across multiple projects"
+                  secondary="Including information like similar setup instructions & donations"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="&#8226; Have a clean interface that supports multiple platforms"
+                  secondary="Because Github's mobile view is clunky, and third-party apps are sketchy"
+                />
+              </ListItem>
+              <ListItem>
+                <ListItemText
+                  primary="&#8226; Have a popular project showcase"
+                  secondary={[
+                    'Feel free to star some repositories!\t',
+                    <SmileIcon />,
+                  ]}
+                />
+              </ListItem>
+            </List>
+          </Typography>
 
-      <Typography paragraph>
-        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-        ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum
-        integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
-        lacus sed viverra tellus. Purus sit amet volutpat consequat mauris.
-        Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-        vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
-        accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac.
-        Pellentesque nec nam aliquam sem et tortor. Habitant morbi tristique
-        senectus et. Adipiscing elit duis tristique sollicitudin nibh sit.
-        Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra
-        maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
-        aliquam ultrices sagittis orci a.
-      </Typography>
+          <Typography paragraph>
+            If there are any problems with this site on any platform, please
+            create an issue report on the site&rsquo;s Github repository
+            detailing it.
+          </Typography>
+
+          <Typography paragraph>
+            Here is the proper, un-minified destination to post issue reports:{' '}
+            <Link
+              href="https://github.com/T145/T145.github.io/issues"
+              rel="noreferrer"
+            >
+              https://github.com/T145/T145.github.io/issues
+            </Link>
+          </Typography>
+        </Grid>
+      </Grid>
     </div>
   );
 }
