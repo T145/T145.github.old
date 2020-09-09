@@ -53,7 +53,7 @@ function DesktopLayout() {
     <div className={classes.root} data-testid="DesktopLayout">
       <AppBar className={classes.appBar}>
         <Toolbar>
-          <Tooltip title="Github" enterDelay={300}>
+          <Tooltip title="Github">
             <IconButton
               color="inherit"
               component="a"
