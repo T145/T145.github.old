@@ -1,11 +1,10 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import {
   Drawer,
   AppBar,
   Toolbar,
-  List,
   Typography,
   Tooltip,
   IconButton,
@@ -13,8 +12,7 @@ import {
 } from '@material-ui/core';
 import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import { FaMapSigns as SignIcon } from 'react-icons/fa';
-import Routes from '../../routes';
-import ListLink from '../../components/ListLink/ListLink';
+import { RouteList, RouteSwitch } from '../../routes';
 import Footer from '../../components/Footer/Footer';
 
 const drawerWidth = 240;
@@ -98,33 +96,12 @@ function DesktopLayout() {
         </AppBar>
 
         <div className={classes.toolbar} />
-
-        <List>
-          {Routes.map(route => (
-            <ListLink
-              to={route.path}
-              primary={route.name}
-              icon={route.icon}
-              key={route.key}
-            />
-          ))}
-        </List>
+        <RouteList />
       </Drawer>
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-
-        <Switch>
-          {Routes.map(route => (
-            <Route
-              exact
-              path={route.path}
-              key={route.key}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-
+        <RouteSwitch />
         <Footer />
       </main>
     </div>

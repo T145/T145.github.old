@@ -19,6 +19,9 @@ const theme = createMuiTheme({
     MuiIconButton: {
       color: 'inherit', // 'default' by default
     },
+    MuiTooltip: {
+      enterDelay: 300,
+    },
   },
   palette: {
     primary: {

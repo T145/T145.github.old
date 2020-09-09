@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { isIOS } from 'react-device-detect';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import {
@@ -9,13 +9,11 @@ import {
   Typography,
   IconButton,
   Icon,
-  List,
 } from '@material-ui/core';
 import { FaMapSigns as SignIcon } from 'react-icons/fa';
 import { VscGithub as GitHubIcon } from 'react-icons/vsc';
 import { AiOutlineBars as BarsIcon } from 'react-icons/ai';
-import Routes from '../../routes';
-import ListLink from '../../components/ListLink/ListLink';
+import { RouteList, RouteSwitch } from '../../routes';
 import Footer from '../../components/Footer/Footer';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -76,17 +74,7 @@ function MobileLayout() {
       <div className={classes.toolbar} />
 
       <div className={classes.content}>
-        <Switch>
-          {Routes.map(route => (
-            <Route
-              exact
-              path={route.path}
-              key={route.key}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-
+        <RouteSwitch />
         <Footer />
       </div>
 
@@ -129,16 +117,7 @@ function MobileLayout() {
               onClick={handleDrawerClose}
               onKeyDown={handleDrawerClose}
             >
-              <List>
-                {Routes.map(route => (
-                  <ListLink
-                    to={route.path}
-                    primary={route.name}
-                    icon={route.icon}
-                    key={route.key}
-                  />
-                ))}
-              </List>
+              <RouteList />
             </div>
           </SwipeableDrawer>
         </Toolbar>
