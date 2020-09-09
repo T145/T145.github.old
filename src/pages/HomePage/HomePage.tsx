@@ -15,7 +15,7 @@ export default function HomePage() {
       <Grid container spacing={2}>
         <Grid item>
           <Typography component="h2" variant="h6" color="primary" gutterBottom>
-            Welcome to T145&rsquo;s Github Documentation website!
+            Welcome to T145&rsquo;s Github documentation website!
           </Typography>
 
           <Typography paragraph>
@@ -24,13 +24,13 @@ export default function HomePage() {
               <ListItem>
                 <ListItemText
                   primary="&#8226; Render views in HTML5 to allow maximum customization"
-                  secondary="Because Github's markdown rendering generates archaic HTML"
+                  secondary="Because Github's Markdown rendering generates archaic HTML"
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
                   primary="&#8226; Remove the need to copy-paste similar READMEs across multiple projects"
-                  secondary="Including information like similar setup instructions & donations"
+                  secondary="Including information like setup instructions & donations"
                 />
               </ListItem>
               <ListItem>
@@ -43,7 +43,7 @@ export default function HomePage() {
                 <ListItemText
                   primary="&#8226; Have a popular project showcase"
                   secondary={[
-                    'Feel free to star some repositories!\t',
+                    'Feel free to star some repositories! ',
                     <SmileIcon />,
                   ]}
                 />
