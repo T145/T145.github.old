@@ -9,11 +9,11 @@ import {
 import { SiInternetarchive as ArchiveIcon } from 'react-icons/si';
 import List from '@material-ui/core/List';
 import ListLink from './components/ListLink/ListLink';
-import Home from './pages/HomePage/HomePage';
-import Archive from './pages/ArchivePage/ArchivePage';
-import TravelingSalesman from './pages/TravelingSalesmanPage/TravelingSalesmanPage';
-import ProgrammingContests from './pages/ProgrammingContestsPage/ProgrammingContestsPage';
-import MetalChests from './pages/MetalChestsPage/MetalChestsPage';
+import HomePage from './pages/HomePage/HomePage';
+import ArchivePage from './pages/ArchivePage/ArchivePage';
+import SalesmanPage from './pages/SalesmanPage/SalesmanPage';
+import ContestsPage from './pages/ContestsPage/ContestsPage';
+import ChestsPage from './pages/ChestsPage/ChestsPage';
 
 /*
  Route keys are hardcoded as opposed to using
@@ -26,35 +26,35 @@ const Routes = [
     path: '/',
     name: 'Home',
     icon: <HouseIcon />,
-    component: Home,
+    component: HomePage,
   },
   {
     key: 101,
     path: '/archive',
     name: 'Archive',
     icon: <ArchiveIcon />,
-    component: Archive,
+    component: ArchivePage,
   },
   {
     key: 102,
-    path: '/travelingSalesman',
+    path: '/salesman',
     name: 'Traveling Salesman',
     icon: <MapIcon />,
-    component: TravelingSalesman,
+    component: SalesmanPage,
   },
   {
     key: 103,
-    path: '/programmingContests',
+    path: '/contests',
     name: 'Programming Contests',
     icon: <TrophyIcon />,
-    component: ProgrammingContests,
+    component: ContestsPage,
   },
   {
     key: 104,
-    path: '/metalChests',
+    path: '/chests',
     name: 'Metal Chests',
     icon: <MetalBarIcon />,
-    component: MetalChests,
+    component: ChestsPage,
   },
 ];
 

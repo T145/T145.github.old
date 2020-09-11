@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProgrammingContestsPage from './ProgrammingContestsPage';
+import ChestsPage from './ChestsPage';
 
-describe('<ProgrammingContestsPage />', () => {
+describe('<ChestsPage />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<ProgrammingContestsPage />);
+    component = shallow(<ChestsPage />);
   });
 
   test('It should mount', () => {

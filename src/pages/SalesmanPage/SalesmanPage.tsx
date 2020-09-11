@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-export default function TravelingSalesmanPage() {
+export default function SalesmanPage() {
   return (
-    <div data-testid="TravelingSalesmanPage">
+    <div data-testid="SalesmanPage">
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        TravelingSalesmanPage
+        SalesmanPage
       </Typography>
 
       <Typography paragraph>

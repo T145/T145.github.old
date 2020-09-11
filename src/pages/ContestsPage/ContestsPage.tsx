@@ -1,11 +1,11 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 
-export default function ProgrammingContestsPage() {
+export default function ContestsPage() {
   return (
-    <div data-testid="ProgrammingContestsPage">
+    <div data-testid="ContestsPage">
       <Typography component="h2" variant="h6" color="primary" gutterBottom>
-        ProgrammingContestsPage
+        ContestsPage
       </Typography>
 
       <Typography paragraph>
