@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "typeRoots": ["typings", "node_modules/@types"]
   },
   "include": ["src", "templates"],
   "exclude": ["public", "prettier.config.js"]

@@ -46,6 +46,7 @@
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
     "fontsource-roboto": "latest",
+    "mc-curseforge-api": "^2.1.0",
     "node-sass": "latest",
     "react": "latest",
     "react-device-detect": "latest",
@@ -55,7 +56,6 @@
     "react-player": "latest",
     "react-router-dom": "latest",
     "react-scripts": "latest",
-    "react-svg": "^11.0.38",
     "react-test-renderer": "latest",
     "typescript": "latest",
     "webpack": "4.42.0"
