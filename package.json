@@ -46,7 +46,6 @@
     "enzyme": "latest",
     "enzyme-adapter-react-16": "latest",
     "fontsource-roboto": "latest",
-    "mc-curseforge-api": "^2.1.0",
     "node-sass": "latest",
     "react": "latest",
     "react-device-detect": "latest",
