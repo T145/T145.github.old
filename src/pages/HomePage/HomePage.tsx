@@ -19,29 +19,29 @@ export default function HomePage() {
           </Typography>
 
           <Typography paragraph>
-            This project was made to fulfill the following desires:
+            This project was made to:
             <List>
               <ListItem>
                 <ListItemText
-                  primary="&#8226; Render views in HTML5 to allow maximum customization"
+                  primary="&#8226; Render views in HTML5, allowing maximum customization"
                   secondary="Because Github's Markdown rendering generates archaic HTML"
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
-                  primary="&#8226; Remove the need to copy-paste similar READMEs across multiple projects"
-                  secondary="Including information like setup instructions & donations"
+                  primary="&#8226; Render copy-pasting similar READMEs across multiple projects unnecessary"
+                  secondary="Including information like setup instructions & donation options"
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
-                  primary="&#8226; Have a clean interface that supports multiple platforms"
+                  primary="&#8226; Be a clean documentation interface that supports multiple platforms"
                   secondary="Because Github's mobile view is clunky, and third-party apps are sketchy"
                 />
               </ListItem>
               <ListItem>
                 <ListItemText
-                  primary="&#8226; Have a popular project showcase"
+                  primary="&#8226; Be a popular project showcase"
                   secondary={[
                     'Feel free to star some repositories! ',
                     <SmileIcon />,
@@ -53,18 +53,14 @@ export default function HomePage() {
 
           <Typography paragraph>
             If there are any problems with this site on any platform, please
-            create an issue report on the site&rsquo;s Github repository
-            detailing it.
-          </Typography>
-
-          <Typography paragraph>
-            Here is the proper, un-minified destination to post issue reports:{' '}
+            give a detailed report over at{' '}
             <Link
               href="https://github.com/T145/T145.github.io/issues"
               rel="noreferrer"
             >
               https://github.com/T145/T145.github.io/issues
             </Link>
+            .
           </Typography>
         </Grid>
       </Grid>
