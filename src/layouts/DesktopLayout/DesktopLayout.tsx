@@ -13,7 +13,7 @@ import {
 import { VscGithub as GithubIcon } from 'react-icons/vsc';
 import { FaMapSigns as SignIcon } from 'react-icons/fa';
 import { RouteList, RouteSwitch } from '../../routes';
-import Footer from '../../components/Footer/Footer';
+import Copyright from '../../components/Copyright/Copyright';
 
 const drawerWidth = 240;
 
@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
+    grow: {
+      flexGrow: 1,
+    },
   })
 );
 
@@ -67,6 +70,9 @@ function DesktopLayout() {
               <GithubIcon />
             </IconButton>
           </Tooltip>
+
+          <div className={classes.grow} />
+          <Copyright />
         </Toolbar>
       </AppBar>
 
@@ -84,7 +90,7 @@ function DesktopLayout() {
               <SignIcon />
             </Icon>
 
-            <div className={classes.content} />
+            <div className={classes.grow} />
 
             <Route>
               {({ location }) => (
@@ -103,7 +109,6 @@ function DesktopLayout() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <RouteSwitch />
-        <Footer />
       </main>
     </div>
   );

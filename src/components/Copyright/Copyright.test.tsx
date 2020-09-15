@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from './Footer';
+import Copyright from './Copyright';
 
-describe('<Footer />', () => {
+describe('<Copyright />', () => {
   let component;
 
   beforeEach(() => {
-    component = shallow(<Footer />);
+    component = shallow(<Copyright />);
   });
 
   test('It should mount', () => {

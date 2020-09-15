@@ -14,7 +14,7 @@ import { FaMapSigns as SignIcon } from 'react-icons/fa';
 import { VscGithub as GitHubIcon } from 'react-icons/vsc';
 import { AiOutlineBars as BarsIcon } from 'react-icons/ai';
 import { RouteList, RouteSwitch } from '../../routes';
-import Footer from '../../components/Footer/Footer';
+import Copyright from '../../components/Copyright/Copyright';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,7 +54,7 @@ function MobileLayout() {
   return (
     <div className={classes.root} data-testid="MobileLayout">
       <AppBar color="secondary">
-        <Toolbar id="back-to-top-anchor">
+        <Toolbar>
           <Icon color="inherit" fontSize="small">
             <SignIcon />
           </Icon>
@@ -75,7 +75,6 @@ function MobileLayout() {
 
       <div className={classes.content}>
         <RouteSwitch />
-        <Footer />
       </div>
 
       <div className={classes.toolbar} />
@@ -94,6 +93,8 @@ function MobileLayout() {
             <GitHubIcon />
           </IconButton>
 
+          <div className={classes.grow} />
+          <Copyright />
           <div className={classes.grow} />
 
           <IconButton

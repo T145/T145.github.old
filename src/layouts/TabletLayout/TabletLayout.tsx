@@ -24,7 +24,7 @@ import {
   FiChevronsRight as ChevronRightIcon,
 } from 'react-icons/fi';
 import { RouteList, RouteSwitch } from '../../routes';
-import Footer from '../../components/Footer/Footer';
+import Copyright from '../../components/Copyright/Copyright';
 
 const drawerWidth = 240;
 
@@ -144,6 +144,8 @@ function TabletLayout() {
           </IconButton>
 
           <div className={classes.grow} />
+          <Copyright />
+          <div className={classes.grow} />
 
           <IconButton
             color="inherit"
@@ -205,7 +207,6 @@ function TabletLayout() {
       >
         <div className={classes.drawerHeader} />
         <RouteSwitch />
-        <Footer />
       </main>
     </div>
   );
