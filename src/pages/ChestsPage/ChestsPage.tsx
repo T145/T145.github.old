@@ -2,7 +2,7 @@
 // If you are certain the content passed to dangerouslySetInnerHTML is sanitized HTML you can disable this rule.
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import { Grid, Paper, SvgIcon } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing(0.1),
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
@@ -18,6 +17,9 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: '100%',
       maxHeight: '100%',
       objectFit: 'cover',
+    },
+    badge: {
+      padding: '1px',
     },
   })
 );
@@ -65,21 +67,43 @@ export default function ChestsPage() {
         <Grid container justify="center">
           <Grid item>
             <Paper className={classes.paper}>
-              <SvgIcon
-                component={() => (
-                  <div dangerouslySetInnerHTML={{ __html: downloadsBadge }} />
-                )}
+              <div
+                className={classes.badge}
+                dangerouslySetInnerHTML={{ __html: downloadsBadge }}
               />
             </Paper>
           </Grid>
 
           <Grid item>
             <Paper className={classes.paper}>
-              <SvgIcon
-                component={() => (
-                  <div dangerouslySetInnerHTML={{ __html: versionsBadge }} />
-                )}
+              <div
+                className={classes.badge}
+                dangerouslySetInnerHTML={{ __html: versionsBadge }}
               />
+            </Paper>
+          </Grid>
+
+          <Grid item>
+            <Paper className={classes.paper}>
+              <a href="https://www.codacy.com/manual/T145/metal-chests">
+                <img
+                  className={classes.badge}
+                  src="https://img.shields.io/codacy/grade/04f5020887174b9aadcaa976556f0f74?style=for-the-badge&logo=codacy&labelColor=2D2D2D"
+                  alt="Code Grade Badge"
+                />
+              </a>
+            </Paper>
+          </Grid>
+
+          <Grid item>
+            <Paper className={classes.paper}>
+              <a href="https://discord.gg/EFMcwpC">
+                <img
+                  className={classes.badge}
+                  src="https://img.shields.io/discord/265632935456014336?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=%237289da&labelColor=2D2D2D"
+                  alt="Discord Badge"
+                />
+              </a>
             </Paper>
           </Grid>
         </Grid>
