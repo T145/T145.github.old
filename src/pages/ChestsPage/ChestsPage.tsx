@@ -3,6 +3,8 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
+import logo from '../../images/logo.png';
+import mcShowcase from '../../images/jGQQLlF.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,18 +50,12 @@ export default function ChestsPage() {
     <Grid
       container
       className={classes.root}
-      spacing={2}
+      spacing={3}
       data-testid="ChestsPage"
     >
       <Grid item xs={12}>
         <Paper className={classes.paper}>
-          <img
-            className={classes.logo}
-            src="https://i.imgur.com/Vsj2cT2.png"
-            alt="Metal Chests Logo"
-            crossOrigin="anonymous"
-            referrerPolicy="no-referrer"
-          />
+          <img className={classes.logo} src={logo} alt="Metal Chests Logo" />
         </Paper>
       </Grid>
 
@@ -90,6 +86,7 @@ export default function ChestsPage() {
                   className={classes.badge}
                   src="https://img.shields.io/codacy/grade/04f5020887174b9aadcaa976556f0f74?style=for-the-badge&logo=codacy&labelColor=2D2D2D"
                   alt="Code Grade Badge"
+                  referrerPolicy="no-referrer"
                 />
               </a>
             </Paper>
@@ -100,13 +97,24 @@ export default function ChestsPage() {
               <a href="https://discord.gg/EFMcwpC">
                 <img
                   className={classes.badge}
-                  src="https://img.shields.io/discord/265632935456014336?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=%237289da&labelColor=2D2D2D"
+                  src="https://img.shields.io/discord/265632935456014336?style=for-the-badge&logo=discord&label=Discord&logoColor=white&color=%237289da&labelColor=2D2D2D"
                   alt="Discord Badge"
+                  referrerPolicy="no-referrer"
                 />
               </a>
             </Paper>
           </Grid>
         </Grid>
+      </Grid>
+
+      <Grid item xs={12}>
+        <Paper className={classes.paper}>
+          <img
+            className={classes.logo}
+            src={mcShowcase}
+            alt="Metal Chests Showcase"
+          />
+        </Paper>
       </Grid>
     </Grid>
   );
