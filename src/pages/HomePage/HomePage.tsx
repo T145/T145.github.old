@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Link,
-} from '@material-ui/core';
+import { Grid, Typography, List, ListItemText, Link } from '@material-ui/core';
 import { FaRegSmileWink as SmileIcon } from 'react-icons/fa';
 
 export default function HomePage() {
@@ -21,33 +14,25 @@ export default function HomePage() {
           <Typography paragraph>
             This project was made to:
             <List>
-              <ListItem>
-                <ListItemText
-                  primary="&#8226; Render views in HTML5, allowing maximum customization"
-                  secondary="Because Github's Markdown rendering generates archaic HTML"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary="&#8226; Render copy-pasting similar READMEs across multiple projects unnecessary"
-                  secondary="Including information like setup instructions & donation options"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary="&#8226; Be a clean documentation interface that supports multiple platforms"
-                  secondary="Because Github's mobile view is clunky, and third-party apps are sketchy"
-                />
-              </ListItem>
-              <ListItem>
-                <ListItemText
-                  primary="&#8226; Be a popular project showcase"
-                  secondary={[
-                    'Feel free to star some repositories! ',
-                    <SmileIcon />,
-                  ]}
-                />
-              </ListItem>
+              <ListItemText
+                primary="&#8226; Render views in HTML5, allowing maximum customization"
+                secondary="Because Github's Markdown rendering generates archaic HTML"
+              />
+              <ListItemText
+                primary="&#8226; Render copy-pasting similar READMEs across multiple projects unnecessary"
+                secondary="Including information like setup instructions & donation options"
+              />
+              <ListItemText
+                primary="&#8226; Be a clean documentation interface that supports multiple platforms"
+                secondary="Because Github's mobile view is clunky, and third-party apps are sketchy"
+              />
+              <ListItemText
+                primary="&#8226; Be a popular project showcase"
+                secondary={[
+                  'Feel free to star some repositories! ',
+                  <SmileIcon />,
+                ]}
+              />
             </List>
           </Typography>
 
