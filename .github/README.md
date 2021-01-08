@@ -1,13 +1,7 @@
 
-### [Initializing Storybook]()
-```bash
-npx sb init
-yarn storybook
-```
-
 ### [Generating components](https://github.com/arminbro/generate-react-cli)
 ```
-npx generate-react-cli component MyAwesomeComponent --type={default,page,layout}
+npx generate-react-cli component MyAwesomeComponent --type={page,layout}
 ```
 
 ## Other References

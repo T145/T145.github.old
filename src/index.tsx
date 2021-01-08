@@ -1,67 +1,42 @@
 /* eslint-disable no-restricted-imports */
-import React, { StrictMode } from 'react';
+import React, { StrictMode as Strict } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { isMobile, isTablet } from 'react-device-detect';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  withStyles,
-} from '@material-ui/core/styles';
-import { Shadows } from '@material-ui/core/styles/shadows';
-import { red } from '@material-ui/core/colors';
-import 'fontsource-roboto'; // required for Material UI
-import TabletLayout from './layouts/TabletLayout/TabletLayout';
-import MobileLayout from './layouts/MobileLayout/MobileLayout';
-import DesktopLayout from './layouts/DesktopLayout/DesktopLayout';
+import '@fontsource/roboto'; // required for Material UI
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import ProTip from './ProTip';
 
-const GlobalTheme = createMuiTheme({
-  props: {
-    MuiToolbar: {
-      variant: isMobile ? 'regular' : 'dense', // dense is desktop only
-    },
-    MuiIconButton: {
-      color: 'inherit', // 'default' by default
-    },
-    MuiTooltip: {
-      enterDelay: 300,
-    },
-  },
-  palette: {
-    primary: {
-      main: '#556cd6',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
-    },
-    background: {
-      default: '#fff',
-    },
-  },
-  shadows: Array(25).fill('none') as Shadows,
-});
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      Copyright ©
+      <Link color="inherit" href="https://material-ui.com/">
+        T145
+      </Link>{' '}
+      {new Date().getFullYear()}.
+    </Typography>
+  );
+}
 
-const GlobalCss = withStyles({
-  // @global is handled by jss-plugin-global
-  '@global': {},
-})(() => null);
-
-function getLayout() {
-  if (isMobile) {
-    return isTablet ? <TabletLayout /> : <MobileLayout />;
-  }
-  return <DesktopLayout />;
+function App() {
+  return (
+    <Container maxWidth="sm">
+      <Box my={4}>
+        <Typography variant="h4" component="h1" gutterBottom>
+          Create React App v4-beta example with TypeScript
+        </Typography>
+        <ProTip />
+        <Copyright />
+      </Box>
+    </Container>
+  );
 }
 
 render(
-  <StrictMode>
-    <ThemeProvider theme={GlobalTheme}>
-      <GlobalCss />
-      <Router>{getLayout()}</Router>
-    </ThemeProvider>
-  </StrictMode>,
+  <Strict>
+    <App />
+  </Strict>,
   document.getElementById('root')
 );
