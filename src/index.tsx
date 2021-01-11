@@ -1,18 +1,9 @@
-import React, { ChangeEvent, StrictMode as Strict } from 'react';
+import React, { ChangeEvent, StrictMode as Strict, useState } from 'react';
 import { render } from 'react-dom';
-import { isMobileOnly, isBrowser } from 'react-device-detect';
+import { isBrowser } from 'react-device-detect';
 import '@fontsource/roboto'; // required for material-ui
-import {
-  makeStyles,
-  withStyles,
-  Theme,
-  createStyles,
-  useTheme
-} from '@material-ui/core/styles';
-import Tabs from '@material-ui/core/Tabs';
-import Tab, { TabProps } from '@material-ui/core/Tab';
+import { makeStyles, Theme, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import {
   GiTreasureMap as MapIcon,
   GiTrophy as TrophyIcon,
@@ -22,54 +13,13 @@ import { SiInternetarchive as ArchiveIcon } from 'react-icons/si';
 import SwipeableViews from 'react-swipeable-views';
 import { bindKeyboard } from 'react-swipeable-views-utils';
 import randomcolor from 'randomcolor';
+import SleekTabs from './components/SleekTabs';
+import SleekTab from './components/SleekTab';
+import SleekTabPanel from './components/SleekTabPanel';
 
 const EnhancedSwipeableViews = isBrowser
   ? bindKeyboard(SwipeableViews)
   : SwipeableViews;
-
-interface SleekTabsProps {
-  value: number;
-  onChange: (event: ChangeEvent<unknown>, newValue: number) => void;
-}
-
-type SleekTabProps = TabProps & {
-  label: string;
-};
-
-const SleekTabs = withStyles({
-  indicator: {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-    '& > span': {
-      maxWidth: 40,
-      width: '100%',
-      backgroundColor: '#635ee7'
-    }
-  }
-})((props: SleekTabsProps) => (
-  <Tabs
-    {...props}
-    TabIndicatorProps={{ children: <span /> }}
-    centered={!isMobileOnly}
-    variant={isMobileOnly ? 'fullWidth' : 'standard'}
-  />
-));
-
-const SleekTab = withStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      textTransform: 'none',
-      color: '#fff',
-      fontWeight: theme.typography.fontWeightRegular,
-      fontSize: theme.typography.pxToRem(15),
-      marginRight: theme.spacing(1),
-      '&:focus': {
-        opacity: 1
-      }
-    }
-  })
-)((props: SleekTabProps) => <Tab disableRipple {...props} />);
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -83,34 +33,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-type TabPanelProps = {
-  children?: React.ReactNode;
-  direction?: string;
-  index: number;
-  value: number;
-};
-
-const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
-  <div
-    role="tabpanel"
-    hidden={value !== index}
-    id={`full-width-tabpanel-${index}`}
-    aria-labelledby={`full-width-tab-${index}`}
-    {...other}
-  >
-    {value === index && (
-      <Box p={3}>
-        <Typography>{children}</Typography>
-      </Box>
-    )}
-  </div>
-);
-
-TabPanel.defaultProps = {
-  children: <></>,
-  direction: 'rtl'
-};
-
 const allyProps = (index: number) => ({
   id: `full-width-tab-${index}`,
   'aria-controls': `full-width-tabpanel-${index}`
@@ -119,7 +41,7 @@ const allyProps = (index: number) => ({
 function App() {
   const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: ChangeEvent<unknown>, newValue: number) => {
     setValue(newValue);
@@ -167,18 +89,18 @@ function App() {
           onChangeIndex={handleChangeIndex}
           enableMouseEvents={isBrowser}
         >
-          <TabPanel value={value} index={0} direction={theme.direction}>
+          <SleekTabPanel value={value} index={0} direction={theme.direction}>
             Item One
-          </TabPanel>
-          <TabPanel value={value} index={1} direction={theme.direction}>
+          </SleekTabPanel>
+          <SleekTabPanel value={value} index={1} direction={theme.direction}>
             Item Two
-          </TabPanel>
-          <TabPanel value={value} index={2} direction={theme.direction}>
+          </SleekTabPanel>
+          <SleekTabPanel value={value} index={2} direction={theme.direction}>
             Item Three
-          </TabPanel>
-          <TabPanel value={value} index={3} direction={theme.direction}>
+          </SleekTabPanel>
+          <SleekTabPanel value={value} index={3} direction={theme.direction}>
             Item Four
-          </TabPanel>
+          </SleekTabPanel>
         </EnhancedSwipeableViews>
       </div>
     </div>
