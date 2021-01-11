@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Tab, { TabProps } from '@material-ui/core/Tab';
 
-type SleekTabProps = TabProps & {
+export type SleekTabProps = TabProps & {
   label: string;
 };
 
